@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ElitePlay | Admin Panel</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0f1117;
+      color: #fff;
+    }
+
+    .container {
+      width: min(1100px, 92%);
+      margin: 40px auto;
+    }
+
+    h1, h2 {
+      margin-top: 0;
+    }
+
+    .panel {
+      background: #181b24;
+      padding: 25px;
+      border-radius: 16px;
+      margin-bottom: 25px;
+    }
+
+    input,
+    textarea,
+    select {
+      width: 100%;
+      padding: 13px;
+      margin: 8px 0 16px;
+      border: 1px solid #303542;
+      border-radius: 8px;
+      background: #101218;
+      color: #fff;
+      font-size: 15px;
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    label {
+      font-weight: 600;
+    }
+
+    button {
+      border: 0;
+      border-radius: 8px;
+      padding: 12px 18px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    .primary {
+      background: #7c5cff;
+      color: #fff;
+    }
+
+    .danger {
+      background: #e5484d;
+      color: #fff;
+    }
+
+    .secondary {
+      background: #303542;
+      color: #fff;
+      margin-left: 8px;
+    }
+
+    .movie-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .movie-card {
+      background: #101218;
+      border: 1px solid #292e3a;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .movie-card img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .movie-info {
+      padding: 15px;
+    }
+
+    .movie-info h3 {
+      margin: 0 0 8px;
+    }
+
+    .movie-info p {
+      color: #aaa;
+      margin: 5px 0;
+    }
+
+    .actions {
+      margin-top: 14px;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    #message {
+      margin-top: 15px;
+      padding: 12px;
+      border-radius: 8px;
+      background: #222735;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <!-- LOGIN -->
+    <section class="panel" id="loginPanel">
+
+      <h1>ElitePlay Admin</h1>
+
+      <p>Login to manage your movies.</p>
+
+      <form id="loginForm">
+
+        <label>Email</label>
+
+        <input
+          type="email"
+          id="email"
+          required
+          placeholder="Admin email"
+        >
+
+        <label>Password</label>
+
+        <input
+          type="password"
+          id="password"
+          required
+          placeholder="Password"
+        >
+
+        <button class="primary" type="submit">
+          Login
+        </button>
+
+      </form>
+
+      <div id="loginMessage"></div>
+
+    </section>
+
+
+    <!-- ADMIN -->
+    <section class="hidden" id="adminPanel">
+
+      <div class="panel">
+
+        <h1>ElitePlay Admin Panel</h1>
+
+        <button class="danger" id="logoutBtn">
+          Logout
+        </button>
+
+      </div>
+
+
+      <!-- MOVIE FORM -->
+      <div class="panel">
+
+        <h2 id="formTitle">Add Movie</h2>
+
+        <form id="movieForm">
+
+          <input
+            type="hidden"
+            id="movieId"
+          >
+
+
+          <!-- MOVIE TITLE -->
+          <label>Movie Title</label>
+
+          <input
+            type="text"
+            id="title"
+            required
+            placeholder="Interstellar"
+          >
+
+
+          <!-- DESCRIPTION -->
+          <label>Description</label>
+
+          <textarea
+            id="description"
+            placeholder="Movie description..."
+          ></textarea>
+
+
+          <!-- YEAR -->
+          <label>Year</label>
+
+          <input
+            type="number"
+            id="year"
+            placeholder="2026"
+          >
+
+
+          <!-- RATING -->
+          <label>Rating</label>
+
+          <input
+            type="number"
+            id="rating"
+            min="0"
+            max="10"
+            step="0.1"
+            placeholder="8.5"
+          >
+
+
+          <!-- GENRE -->
+          <label>Genre</label>
+
+          <select id="genre">
+
+            <option value="Action">Action</option>
+            <option value="Adventure">Adventure</option>
+            <option value="Animation">Animation</option>
+            <option value="Comedy">Comedy</option>
+            <option value="Crime">Crime</option>
+            <option value="Drama">Drama</option>
+            <option value="Fantasy">Fantasy</option>
+            <option value="Horror">Horror</option>
+            <option value="Mystery">Mystery</option>
+            <option value="Romance">Romance</option>
+            <option value="Sci-Fi">Sci-Fi</option>
+            <option value="Thriller">Thriller</option>
+            <option value="War">War</option>
+
+          </select>
+
+
+          <!-- TRAILER -->
+          <label>Trailer URL</label>
+
+          <input
+            type="url"
+            id="trailerUrl"
+            placeholder="https://www.youtube.com/watch?v=..."
+          >
+
+
+          <!-- POSTER -->
+          <label>Poster Image</label>
+
+          <input
+            type="file"
+            id="posterFile"
+            accept="image/*"
+          >
+
+
+          <!-- BACKDROP -->
+          <label>Backdrop Image</label>
+
+          <input
+            type="file"
+            id="backdropFile"
+            accept="image/*"
+          >
+
+
+          <!-- FULL MOVIE -->
+          <label>Full Movie File</label>
+
+          <input
+            type="file"
+            id="movieFile"
+            accept="video/mp4,video/webm,video/ogg"
+          >
+
+
+          <br>
+
+
+          <!-- SAVE -->
+          <button
+            class="primary"
+            type="submit"
+          >
+            Save Movie
+          </button>
+
+
+          <!-- CANCEL -->
+          <button
+            class="secondary"
+            type="button"
+            id="cancelEdit"
+          >
+            Cancel
+          </button>
+
+        </form>
+
+
+        <div id="message"></div>
+
+      </div>
+
+
+      <!-- MOVIES -->
+      <div class="panel">
+
+        <h2>All Movies</h2>
+
+        <div
+          class="movie-list"
+          id="movieList"
+        ></div>
+
+      </div>
+
+    </section>
+
+  </div>
+
+
+  <!-- SUPABASE -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+  <!-- CONFIG -->
+  <script src="config.js"></script>
+
+  <!-- For Bunny Movies -->
+  <script src="https://cdn.jsdelivr.net/npm/tus-js-client@4.3.1/dist/tus.min.js"></script>
+
+  <!-- ADMIN JS -->
+  <script src="admin.js"></script>
+
+</body>
+</html>

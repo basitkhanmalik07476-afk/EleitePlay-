@@ -1,0 +1,2375 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Elite Play | Movie App</title>
+
+  <link rel="stylesheet" href="moviebox.css">
+  <link rel="stylesheet" href="ThemeOrLangSections/loginbtn.css">
+  
+  <!-- <link rel="stylesheet" href="top-nav.css"> -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>ElitePlay | Movie App</title>
+
+    <link
+        rel="stylesheet"
+        href="moviebox.css"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================
+     TOP NAVBAR
+========================================= -->
+
+<!-- =========================================
+     PREMIUM ELITEPLAY NAVBAR
+========================================= -->
+<!-- Animated Background -->
+<canvas id="eliteBackground"></canvas>
+<header class="elite-navbar">
+
+    <!-- Logo -->
+ <a href="#" class="elite-brand" id="homeLogo">
+    <span class="brand-icon">▶</span>
+    <span>Elite<span class="brand-accent">Play</span></span>
+</a>
+
+
+    <!-- Desktop Navigation -->
+    <nav class="elite-nav">
+
+        <a href="#" class="elite-nav-link active" data-nav="home">
+            Home
+        </a>
+
+        <a href="#movies" class="elite-nav-link" data-nav="movies">
+            Movies
+        </a>
+
+        <a href="#trendingSection" class="elite-nav-link" data-nav="trending">
+            Trending
+        </a>
+
+        <a href="#popularSection" class="elite-nav-link" data-nav="popular">
+            Popular
+        </a>
+
+        <button
+            class="elite-nav-link nav-my-list"
+            id="headerFavoritesBtn"
+            type="button"
+        >
+            My List
+        </button>
+
+    </nav>
+
+
+    <!-- Right Side -->
+    <div class="elite-header-right">
+
+        <!-- Search -->
+        <div class="elite-header-search search-box">
+
+            <span class="header-search-icon">⌕</span>
+
+            <input
+                type="search"
+                id="searchInput"
+                placeholder="Search movies..."
+                autocomplete="off"
+            >
+
+        </div>
+
+
+        <!-- Search Suggestions -->
+        <div
+            class="elite-search-suggestions"
+            id="searchSuggestions"
+        ></div>
+
+
+        <!-- Notification -->
+        <button
+            class="header-icon-btn"
+            id="notificationBtn"
+            type="button"
+            aria-label="Notifications"
+        >
+            <span>🔔</span>
+            <i></i>
+        </button>
+
+        <div class="elite-notification-panel" id="notificationPanel">
+
+    <div class="panel-header">
+        <div>
+            <strong>Notifications</strong>
+            <small>Stay updated</small>
+        </div>
+
+        <button id="closeNotificationPanel" type="button">✕</button>
+    </div>
+
+    <div class="notification-item">
+        <span class="notification-icon">🎬</span>
+        <div>
+            <strong>Welcome to ElitePlay</strong>
+            <p>Discover movies and start watching.</p>
+        </div>
+    </div>
+
+    <div class="notification-item">
+        <span class="notification-icon">🔥</span>
+        <div>
+            <strong>Trending Movies</strong>
+            <p>Check out what's trending today.</p>
+        </div>
+    </div>
+
+    <div class="notification-item">
+        <span class="notification-icon">⭐</span>
+        <div>
+            <strong>Top Rated</strong>
+            <p>Explore highly rated movies.</p>
+        </div>
+    </div>
+
+</div>
+
+
+        <!-- Profile -->
+        <button
+            class="elite-profile"
+            id="profileBtn"
+            type="button"
+            aria-label="Profile"
+        >
+            <span class="profile-letter">EP</span>
+        </button>
+
+        <div class="elite-profile-menu" id="profileMenu">
+
+    <div class="profile-menu-top">
+        <div class="profile-big">EP</div>
+
+        <div>
+            <strong>ElitePlay User</strong>
+            <small>Movie Explorer</small>
+        </div>
+    </div>
+
+    <div class="profile-menu-divider"></div>
+
+    <button type="button" id="profileFavorites">
+        <span>❤️</span>
+        My Favorites
+    </button>
+
+    <button type="button" id="profileHistory">
+        <span>🕐</span>
+        Watch History
+    </button>
+
+    <button type="button" id="profileContinue">
+        <span>▶️</span>
+        Continue Watching
+    </button>
+
+    <div class="profile-menu-divider"></div>
+
+    <button type="button" id="profileClose">
+        <span>✕</span>
+        Close Menu
+    </button>
+
+</div>
+
+
+<!-- For Login Popup -->
+
+
+<!-- Login -->
+<button
+    class="elite-login-btn"
+    id="loginBtn"
+    type="button"
+    aria-label="Login"
+>
+    Login
+</button>
+
+
+<!-- For Color Or Language Sections -->
+
+<!-- =========================================
+     LANGUAGE BUTTON
+========================================= -->
+
+<div class="elite-setting-wrapper">
+
+    <button
+        class="elite-setting-btn"
+        id="languageBtn"
+        type="button"
+        aria-label="Language"
+        aria-expanded="false"
+    >
+        <span class="setting-icon">🌐</span>
+        <span id="currentLanguage">English</span>
+        <span class="setting-arrow"></span>
+    </button>
+
+
+    <div
+        class="elite-setting-dropdown language-dropdown"
+        id="languageDropdown"
+    >
+
+        <div class="setting-dropdown-header">
+            <span>🌐</span>
+
+            <div>
+                <strong data-i18n="languageTitle">
+                    Language
+                </strong>
+
+                <small data-i18n="languageSubtitle">
+                    Choose your language
+                </small>
+            </div>
+        </div>
+
+
+        <div class="setting-options">
+
+            <button
+                class="language-option active"
+                data-language="en"
+                type="button"
+            >
+                <span>🇬🇧</span>
+                <span>English</span>
+                <span class="option-check">✓</span>
+            </button>
+
+
+            <button
+                class="language-option"
+                data-language="hi"
+                type="button"
+            >
+                <span>🇮🇳</span>
+                <span>Hindi</span>
+                <span class="option-check">✓</span>
+            </button>
+
+
+            <button
+                class="language-option"
+                data-language="ja"
+                type="button"
+            >
+                <span>🇯🇵</span>
+                <span>Japanese</span>
+                <span class="option-check">✓</span>
+            </button>
+
+
+            <button
+                class="language-option"
+                data-language="zh"
+                type="button"
+            >
+                <span>🇨🇳</span>
+                <span>Chinese</span>
+                <span class="option-check">✓</span>
+            </button>
+
+
+            <button
+                class="language-option"
+                data-language="bn"
+                type="button"
+            >
+                <span>🇧🇩</span>
+                <span>Bangla</span>
+                <span class="option-check">✓</span>
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================
+     THEME BUTTON
+========================================= -->
+
+<div class="elite-setting-wrapper">
+
+    <button
+        class="elite-setting-btn theme-setting-btn"
+        id="themeBtn"
+        type="button"
+        aria-label="Color Theme"
+        aria-expanded="false"
+    >
+
+
+
+        <span
+            class="theme-color-dot"
+            id="currentThemeDot"
+        ></span>
+
+
+        <span id="currentTheme">
+            Violet
+        </span>
+
+                <span>🎨</span>
+
+
+        <span class="setting-arrow"></span>
+    </button>
+
+
+    <div
+        class="elite-setting-dropdown theme-dropdown"
+        id="themeDropdown"
+    >
+
+        <div class="setting-dropdown-header">
+
+            <span>🎨</span>
+
+            <div>
+                <strong data-i18n="themeTitle">
+                    Color Theme
+                </strong>
+
+                <small data-i18n="themeSubtitle">
+                    Customize your interface
+                </small>
+            </div>
+
+        </div>
+
+
+        <!-- COLOR THEMES -->
+
+        <div class="theme-options">
+
+            <button
+                class="theme-option active"
+                data-theme="violet"
+                type="button"
+            >
+                <span
+                    class="theme-option-dot violet"
+                ></span>
+
+                <span>Violet</span>
+
+                <span class="option-check">✓</span>
+            </button>
+
+
+            <button
+                class="theme-option"
+                data-theme="ocean"
+                type="button"
+            >
+                <span
+                    class="theme-option-dot ocean"
+                ></span>
+
+                <span>Ocean</span>
+
+                <span class="option-check">✓</span>
+            </button>
+
+
+            <button
+                class="theme-option"
+                data-theme="emerald"
+                type="button"
+            >
+                <span
+                    class="theme-option-dot emerald"
+                ></span>
+
+                <span>Emerald</span>
+
+                <span class="option-check">✓</span>
+            </button>
+
+
+            <button
+                class="theme-option"
+                data-theme="rose"
+                type="button"
+            >
+                <span
+                    class="theme-option-dot rose"
+                ></span>
+
+                <span>Rose</span>
+
+                <span class="option-check">✓</span>
+            </button>
+
+
+            <button
+                class="theme-option"
+                data-theme="sunset"
+                type="button"
+            >
+                <span
+                    class="theme-option-dot sunset"
+                ></span>
+
+                <span>Sunset</span>
+
+                <span class="option-check">✓</span>
+            </button>
+
+
+            <button
+                class="theme-option"
+                data-theme="midnight"
+                type="button"
+            >
+                <span
+                    class="theme-option-dot midnight"
+                ></span>
+
+                <span>Midnight</span>
+
+                <span class="option-check">✓</span>
+            </button>
+
+        </div>
+
+
+        <!-- APPEARANCE -->
+
+        <div class="theme-divider"></div>
+
+        <div class="appearance-title">
+            <span data-i18n="appearanceTitle">
+                Appearance
+            </span>
+        </div>
+
+
+        <div class="mode-options">
+
+            <button
+                class="mode-option active"
+                data-mode="dark"
+                type="button"
+            >
+                <span>🌙</span>
+                <span data-i18n="darkMode">
+                    Dark
+                </span>
+                <span class="option-check">✓</span>
+            </button>
+
+
+            <button
+                class="mode-option"
+                data-mode="light"
+                type="button"
+            >
+                <span>☀️</span>
+                <span data-i18n="lightMode">
+                    Light
+                </span>
+                <span class="option-check">✓</span>
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+        <!-- Mobile Menu -->
+        <button
+            class="mobile-menu-btn"
+            id="mobileMenuBtn"
+            type="button"
+            aria-label="Open menu"
+        >
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+<!-- For Mobile DropDown Menu  -->
+
+<!-- =========================================
+     MOBILE DROPDOWN MENU
+========================================= -->
+
+<div class="elite-mobile-menu" id="eliteMobileMenu">
+
+    <div class="elite-mobile-menu-inner">
+
+        <!-- Navigation -->
+        <div class="mobile-menu-section">
+
+            <div class="mobile-menu-title">
+                <span>🧭</span>
+                <span>Navigation</span>
+            </div>
+
+            <button
+                class="mobile-menu-link"
+                type="button"
+                data-mobile-nav="home"
+            >
+                <span>⌂</span>
+                <span>Home</span>
+            </button>
+
+            <button
+                class="mobile-menu-link"
+                type="button"
+                data-mobile-nav="movies"
+            >
+                <span>🎬</span>
+                <span>Movies</span>
+            </button>
+
+            <button
+                class="mobile-menu-link"
+                type="button"
+                data-mobile-nav="trending"
+            >
+                <span>⚡</span>
+                <span>Trending</span>
+            </button>
+
+            <button
+                class="mobile-menu-link"
+                type="button"
+                data-mobile-nav="popular"
+            >
+                <span>🔥</span>
+                <span>Popular</span>
+            </button>
+
+            <button
+                class="mobile-menu-link"
+                type="button"
+                data-mobile-nav="my-list"
+            >
+                <span>❤️</span>
+                <span>My List</span>
+            </button>
+
+        </div>
+
+
+        <div class="mobile-menu-divider"></div>
+
+
+        <!-- Color Themes -->
+        <div class="mobile-menu-section">
+
+            <div class="mobile-menu-title">
+                <span>🎨</span>
+                <span>Color Theme</span>
+            </div>
+
+
+            <div class="mobile-theme-grid">
+
+                <button
+                    class="mobile-theme-option"
+                    type="button"
+                    data-mobile-theme="violet"
+                >
+                    <span class="mobile-theme-dot violet"></span>
+                    <span>Violet</span>
+                </button>
+
+
+                <button
+                    class="mobile-theme-option"
+                    type="button"
+                    data-mobile-theme="ocean"
+                >
+                    <span class="mobile-theme-dot ocean"></span>
+                    <span>Ocean</span>
+                </button>
+
+
+                <button
+                    class="mobile-theme-option"
+                    type="button"
+                    data-mobile-theme="emerald"
+                >
+                    <span class="mobile-theme-dot emerald"></span>
+                    <span>Emerald</span>
+                </button>
+
+
+                <button
+                    class="mobile-theme-option"
+                    type="button"
+                    data-mobile-theme="rose"
+                >
+                    <span class="mobile-theme-dot rose"></span>
+                    <span>Rose</span>
+                </button>
+
+
+                <button
+                    class="mobile-theme-option"
+                    type="button"
+                    data-mobile-theme="sunset"
+                >
+                    <span class="mobile-theme-dot sunset"></span>
+                    <span>Sunset</span>
+                </button>
+
+
+                <button
+                    class="mobile-theme-option"
+                    type="button"
+                    data-mobile-theme="midnight"
+                >
+                    <span class="mobile-theme-dot midnight"></span>
+                    <span>Midnight</span>
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="mobile-menu-divider"></div>
+
+
+        <!-- Appearance -->
+        <div class="mobile-menu-section">
+
+            <div class="mobile-menu-title">
+                <span>🌓</span>
+                <span>Appearance</span>
+            </div>
+
+
+            <div class="mobile-mode-buttons">
+
+                <button
+                    class="mobile-mode-option"
+                    type="button"
+                    data-mobile-mode="dark"
+                >
+                    <span>🌙</span>
+                    <span>Dark</span>
+                </button>
+
+
+                <button
+                    class="mobile-mode-option"
+                    type="button"
+                    data-mobile-mode="light"
+                >
+                    <span>☀️</span>
+                    <span>Light</span>
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="mobile-menu-divider"></div>
+
+
+        <!-- Genres -->
+        <div class="mobile-menu-section">
+
+            <div class="mobile-menu-title">
+                <span>🎬</span>
+                <span>Genres</span>
+            </div>
+
+
+            <div class="mobile-genre-grid">
+
+                <button
+                    type="button"
+                    data-mobile-genre="All"
+                >
+                    All
+                </button>
+
+                <button
+                    type="button"
+                    data-mobile-genre="Action"
+                >
+                    Action
+                </button>
+
+                <button
+                    type="button"
+                    data-mobile-genre="Adventure"
+                >
+                    Adventure
+                </button>
+
+                <button
+                    type="button"
+                    data-mobile-genre="Animation"
+                >
+                    Animation
+                </button>
+
+                <button
+                    type="button"
+                    data-mobile-genre="Comedy"
+                >
+                    Comedy
+                </button>
+
+                <button
+                    type="button"
+                    data-mobile-genre="Crime"
+                >
+                    Crime
+                </button>
+
+                <button
+                    type="button"
+                    data-mobile-genre="Drama"
+                >
+                    Drama
+                </button>
+
+                <button
+                    type="button"
+                    data-mobile-genre="Fantasy"
+                >
+                    Fantasy
+                </button>
+
+                <button
+                    type="button"
+                    data-mobile-genre="Horror"
+                >
+                    Horror
+                </button>
+
+                <button
+                    type="button"
+                    data-mobile-genre="Mystery"
+                >
+                    Mystery
+                </button>
+
+                <button
+                    type="button"
+                    data-mobile-genre="Romance"
+                >
+                    Romance
+                </button>
+
+                <button
+                    type="button"
+                    data-mobile-genre="Sci-Fi"
+                >
+                    Sci-Fi
+                </button>
+
+                <button
+                    type="button"
+                    data-mobile-genre="Thriller"
+                >
+                    Thriller
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
+
+
+    </div>
+
+</header>
+
+
+
+
+
+<!-- =========================================
+     APP LAYOUT
+========================================= -->
+
+<div class="app-layout">
+
+
+<!-- =========================================
+     SIDEBAR
+========================================= -->
+
+<aside
+    class="sidebar"
+    id="sidebar"
+>
+
+
+    <div class="sidebar-section">
+
+        <p class="sidebar-title">
+            BROWSE
+        </p>
+
+
+        <button
+            class="sidebar-link active"
+            data-section="popular"
+        >
+            <span>🔥</span>
+            Popular
+        </button>
+
+
+        <button
+            class="sidebar-link"
+            data-section="trending"
+        >
+            <span>⚡</span>
+            Trending
+        </button>
+
+
+        <button
+            class="sidebar-link"
+            data-section="top-rated"
+        >
+            <span>⭐</span>
+            Top Rated
+        </button>
+
+
+        <button
+            class="sidebar-link"
+            data-section="movies"
+        >
+            <span>🎬</span>
+            All Movies
+        </button>
+
+
+        <button
+            class="sidebar-link"
+            data-section="now-playing"
+        >
+            <span>▶</span>
+            Now Playing
+        </button>
+
+
+        <button
+            class="sidebar-link"
+            data-section="upcoming"
+        >
+            <span>📅</span>
+            Upcoming
+        </button>
+
+    </div>
+
+
+
+    <div class="sidebar-divider"></div>
+
+
+
+    <div class="sidebar-section">
+
+        <p class="sidebar-title">
+            MY LIBRARY
+        </p>
+
+
+        <button
+            class="sidebar-link"
+            id="sidebarFavorites"
+        >
+            <span>❤️</span>
+            My Favorites
+        </button>
+
+
+        <button
+            class="sidebar-link"
+            id="sidebarHistory"
+        >
+            <span>🕐</span>
+            Watch History
+        </button>
+
+
+        <button
+            class="sidebar-link"
+            id="sidebarContinue"
+        >
+            <span>▶️</span>
+            Continue Watching
+        </button>
+
+        
+
+    </div>
+
+
+
+    <div class="sidebar-divider"></div>
+
+
+
+    <!-- GENRES -->
+
+    <div class="sidebar-section">
+
+        <p class="sidebar-title">
+            GENRES
+        </p>
+
+
+        <button
+            class="sidebar-genre active"
+            data-genre="All"
+        >
+            All Genres
+        </button>
+
+
+        <button
+            class="sidebar-genre"
+            data-genre="Action"
+        >
+            Action
+        </button>
+
+
+        <button
+            class="sidebar-genre"
+            data-genre="Adventure"
+        >
+            Adventure
+        </button>
+
+
+        <button
+            class="sidebar-genre"
+            data-genre="Animation"
+        >
+            Animation
+        </button>
+
+
+        <button
+            class="sidebar-genre"
+            data-genre="Comedy"
+        >
+            Comedy
+        </button>
+
+
+        <button
+            class="sidebar-genre"
+            data-genre="Crime"
+        >
+            Crime
+        </button>
+
+
+        <button
+            class="sidebar-genre"
+            data-genre="Drama"
+        >
+            Drama
+        </button>
+
+
+        <button
+            class="sidebar-genre"
+            data-genre="Fantasy"
+        >
+            Fantasy
+        </button>
+
+
+        <button
+            class="sidebar-genre"
+            data-genre="Horror"
+        >
+            Horror
+        </button>
+
+
+        <button
+            class="sidebar-genre"
+            data-genre="Mystery"
+        >
+            Mystery
+        </button>
+
+
+        <button
+            class="sidebar-genre"
+            data-genre="Romance"
+        >
+            Romance
+        </button>
+
+
+        <button
+            class="sidebar-genre"
+            data-genre="Sci-Fi"
+        >
+            Sci-Fi
+        </button>
+
+
+        <button
+            class="sidebar-genre"
+            data-genre="Thriller"
+        >
+            Thriller
+        </button>
+
+    </div>
+
+<!-- FOR MOBILE MENU COLOR THEME -->
+<!-- =========================================
+     MOBILE COLOR THEME
+========================================= -->
+
+<div class="mobile-menu-divider"></div>
+
+<div class="mobile-settings-section">
+
+    <div class="mobile-settings-title">
+        <span>🎨</span>
+        <span>Color Theme</span>
+    </div>
+
+    <div class="mobile-theme-options">
+
+        <button
+            type="button"
+            class="mobile-theme-option"
+            data-theme="violet"
+        >
+            <span class="theme-option-dot violet"></span>
+            Violet
+        </button>
+
+        <button
+            type="button"
+            class="mobile-theme-option"
+            data-theme="ocean"
+        >
+            <span class="theme-option-dot ocean"></span>
+            Ocean
+        </button>
+
+        <button
+            type="button"
+            class="mobile-theme-option"
+            data-theme="emerald"
+        >
+            <span class="theme-option-dot emerald"></span>
+            Emerald
+        </button>
+
+        <button
+            type="button"
+            class="mobile-theme-option"
+            data-theme="rose"
+        >
+            <span class="theme-option-dot rose"></span>
+            Rose
+        </button>
+
+        <button
+            type="button"
+            class="mobile-theme-option"
+            data-theme="sunset"
+        >
+            <span class="theme-option-dot sunset"></span>
+            Sunset
+        </button>
+
+        <button
+            type="button"
+            class="mobile-theme-option"
+            data-theme="midnight"
+        >
+            <span class="theme-option-dot midnight"></span>
+            Midnight
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================
+     MOBILE APPEARANCE
+========================================= -->
+
+<div class="mobile-settings-section">
+
+    <div class="mobile-settings-title">
+        <span>🌓</span>
+        <span>Appearance</span>
+    </div>
+
+    <div class="mobile-mode-options">
+
+        <button
+            type="button"
+            class="mobile-mode-option"
+            data-mode="dark"
+        >
+            🌙 Dark
+        </button>
+
+        <button
+            type="button"
+            class="mobile-mode-option"
+            data-mode="light"
+        >
+            ☀️ Light
+        </button>
+
+    </div>
+
+</div>
+
+
+
+
+</aside>
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+
+
+<!-- =========================================
+     MAIN CONTENT
+========================================= -->
+
+<main class="main-content">
+
+
+<!-- =========================================
+     HERO
+========================================= -->
+
+<!-- =========================================
+     HERO MOVIE SLIDER
+========================================= -->
+
+<section class="hero" id="hero">
+
+    <!-- Slider Background -->
+    <div class="hero-slider" id="heroSlider"></div>
+
+    <!-- Dark Overlay -->
+    <div class="hero-overlay"></div>
+
+    <!-- Hero Content -->
+    <div class="hero-content" id="heroContent">
+
+        <span class="eyebrow" id="heroEyebrow">
+            ✦ MOVIE OF THE DAY
+        </span>
+
+        <h1 id="heroTitle">
+            ElitePlay
+        </h1>
+
+        <div class="hero-meta" id="heroMeta">
+            <span>⭐ 8.7</span>
+            <span>2026</span>
+            <span class="tag">Featured</span>
+        </div>
+
+        <p id="heroDescription">
+            Discover popular movies, trending titles,
+            top-rated films and your next favorite
+            movie all in one place.
+        </p>
+
+        <div class="hero-buttons">
+
+            <button
+                class="primary-btn"
+                id="exploreBtn"
+                type="button"
+            >
+                Explore Movies ↗
+            </button>
+
+            <button
+                class="secondary-btn"
+                id="heroDetails"
+                type="button"
+            >
+                ⓘ More Info
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- Slider Controls -->
+    <button
+        class="hero-slider-btn hero-prev"
+        id="heroPrev"
+        type="button"
+        aria-label="Previous movie"
+    >
+        ‹
+    </button>
+
+    <button
+        class="hero-slider-btn hero-next"
+        id="heroNext"
+        type="button"
+        aria-label="Next movie"
+    >
+        ›
+    </button>
+
+    <!-- Slider Bottom -->
+    <div class="hero-slider-bottom">
+
+        <div
+            class="hero-dots"
+            id="heroDots"
+        ></div>
+
+        <div class="hero-counter">
+            <span id="heroCurrent">01</span>
+            <span>/</span>
+            <span id="heroTotal">10</span>
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     QUICK CATEGORY CARDS
+========================================= -->
+
+<section class="quick-section">
+
+    <div class="quick-card">
+
+        <span>🔥</span>
+
+        <div>
+            <strong>Popular</strong>
+            <small>Most watched movies</small>
+        </div>
+
+    </div>
+
+
+    <div class="quick-card">
+
+        <span>⚡</span>
+
+        <div>
+            <strong>Trending</strong>
+            <small>What's hot right now</small>
+        </div>
+
+    </div>
+
+
+    <div class="quick-card">
+
+        <span>⭐</span>
+
+        <div>
+            <strong>Top Rated</strong>
+            <small>Highest rated movies</small>
+        </div>
+
+    </div>
+
+
+    <div class="quick-card">
+
+        <span>🎬</span>
+
+        <div>
+            <strong>Movies</strong>
+            <small>Explore the collection</small>
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     POPULAR MOVIES
+========================================= -->
+
+<section
+    class="content-section"
+    id="popularSection"
+>
+
+    <div class="section-heading">
+
+        <div>
+
+            <p class="eyebrow">
+                DISCOVER
+            </p>
+
+            <h2>
+                Popular Movies
+            </h2>
+
+        </div>
+
+
+        <button
+            class="view-all-btn"
+            data-section="popular"
+        >
+            View All →
+        </button>
+
+    </div>
+
+
+    <div
+        class="horizontal-movie-row"
+        id="popularMovieRow"
+    >
+
+        <div class="section-loading">
+            Loading popular movies...
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     TRENDING
+========================================= -->
+
+<section
+    class="content-section"
+    id="trendingSection"
+>
+
+    <div class="section-heading">
+
+        <div>
+
+            <p class="eyebrow">
+                WHAT'S HOT
+            </p>
+
+            <h2>
+                Trending Now
+            </h2>
+
+        </div>
+
+
+        <button
+            class="view-all-btn"
+            data-section="trending"
+        >
+            View All →
+        </button>
+
+    </div>
+
+
+    <div
+        class="horizontal-movie-row"
+        id="trendingMovieRow"
+    >
+
+        <div class="section-loading">
+            Loading trending movies...
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     TOP RATED
+========================================= -->
+
+<section
+    class="content-section"
+    id="topRatedSection"
+>
+
+    <div class="section-heading">
+
+        <div>
+
+            <p class="eyebrow">
+                HIGHLY RATED
+            </p>
+
+            <h2>
+                Top Rated
+            </h2>
+
+        </div>
+
+
+        <button
+            class="view-all-btn"
+            data-section="top-rated"
+        >
+            View All →
+        </button>
+
+    </div>
+
+    <div
+        class="horizontal-movie-row"
+        id="topRatedMovieRow"
+    >
+
+        <div class="section-loading">
+            Loading top rated movies...
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ---NEW MOVIES SECTIONS -->
+
+<!-- ================================
+     ELITEPLAY - 10 NEW SECTIONS
+     ================================ -->
+
+<section class="elite-extra-sections" id="eliteExtraSections">
+
+  <!-- 1. Elite Picks -->
+  <section class="elite-extra-section">
+    <div class="elite-section-header">
+      <div>
+        <span class="elite-section-kicker">EDITOR'S CHOICE</span>
+        <h2>Elite Picks</h2>
+      </div>
+    </div>
+    <div class="elite-extra-row" id="elitePicksRow"></div>
+    <div class="elite-load-more-wrap">
+      <button class="elite-load-more" data-section="elitePicks">
+        Load More
+      </button>
+    </div>
+  </section>
+
+  <!-- 2. Continue Watching -->
+  <section class="elite-extra-section">
+    <div class="elite-section-header">
+      <div>
+        <span class="elite-section-kicker">KEEP WATCHING</span>
+        <h2>Continue Watching</h2>
+      </div>
+    </div>
+    <div class="elite-extra-row" id="continueWatchingRow"></div>
+    <div class="elite-load-more-wrap">
+      <button class="elite-load-more" data-section="continueWatching">
+        Load More
+      </button>
+    </div>
+  </section>
+
+  <!-- 3. Just Added -->
+  <section class="elite-extra-section">
+    <div class="elite-section-header">
+      <div>
+        <span class="elite-section-kicker">LATEST</span>
+        <h2>Just Added</h2>
+      </div>
+    </div>
+    <div class="elite-extra-row" id="justAddedRow"></div>
+    <div class="elite-load-more-wrap">
+      <button class="elite-load-more" data-section="justAdded">
+        Load More
+      </button>
+    </div>
+  </section>
+
+  <!-- 4. Hidden Gems -->
+  <section class="elite-extra-section">
+    <div class="elite-section-header">
+      <div>
+        <span class="elite-section-kicker">DISCOVER</span>
+        <h2>Hidden Gems</h2>
+      </div>
+    </div>
+    <div class="elite-extra-row" id="hiddenGemsRow"></div>
+    <div class="elite-load-more-wrap">
+      <button class="elite-load-more" data-section="hiddenGems">
+        Load More
+      </button>
+    </div>
+  </section>
+
+  <!-- 5. Highest Rated -->
+  <section class="elite-extra-section">
+    <div class="elite-section-header">
+      <div>
+        <span class="elite-section-kicker">TOP QUALITY</span>
+        <h2>Highest Rated</h2>
+      </div>
+    </div>
+    <div class="elite-extra-row" id="highestRatedRow"></div>
+    <div class="elite-load-more-wrap">
+      <button class="elite-load-more" data-section="highestRated">
+        Load More
+      </button>
+    </div>
+  </section>
+
+  <!-- 6. Trending This Week -->
+  <section class="elite-extra-section">
+    <div class="elite-section-header">
+      <div>
+        <span class="elite-section-kicker">WHAT'S HOT</span>
+        <h2>Trending This Week</h2>
+      </div>
+    </div>
+    <div class="elite-extra-row" id="trendingWeekRow"></div>
+    <div class="elite-load-more-wrap">
+      <button class="elite-load-more" data-section="trendingWeek">
+        Load More
+      </button>
+    </div>
+  </section>
+
+  <!-- 7. Because You Watched -->
+  <section class="elite-extra-section">
+    <div class="elite-section-header">
+      <div>
+        <span class="elite-section-kicker">RECOMMENDED FOR YOU</span>
+        <h2>Because You Watched</h2>
+      </div>
+    </div>
+    <div class="elite-extra-row" id="becauseWatchedRow"></div>
+    <div class="elite-load-more-wrap">
+      <button class="elite-load-more" data-section="becauseWatched">
+        Load More
+      </button>
+    </div>
+  </section>
+
+  <!-- 8. Choose Your Mood -->
+  <section class="elite-extra-section elite-mood-section">
+    <div class="elite-section-header">
+      <div>
+        <span class="elite-section-kicker">YOUR MOOD</span>
+        <h2>Choose Your Mood</h2>
+      </div>
+    </div>
+
+    <div class="elite-mood-buttons">
+      <button class="elite-mood-btn active" data-mood="action">🔥 Action</button>
+      <button class="elite-mood-btn" data-mood="comedy">😂 Comedy</button>
+      <button class="elite-mood-btn" data-mood="horror">👻 Horror</button>
+      <button class="elite-mood-btn" data-mood="romance">❤️ Romance</button>
+      <button class="elite-mood-btn" data-mood="thriller">🔪 Thriller</button>
+      <button class="elite-mood-btn" data-mood="science-fiction">🚀 Sci-Fi</button>
+    </div>
+
+    <div class="elite-extra-row" id="moodRow"></div>
+
+    <div class="elite-load-more-wrap">
+      <button class="elite-load-more" data-section="mood">
+        Load More
+      </button>
+    </div>
+  </section>
+
+  <!-- 9. ElitePlay Awards -->
+  <section class="elite-extra-section">
+    <div class="elite-section-header">
+      <div>
+        <span class="elite-section-kicker">THE BEST OF ELITEPLAY</span>
+        <h2>ElitePlay Awards</h2>
+      </div>
+    </div>
+    <div class="elite-extra-row" id="eliteAwardsRow"></div>
+    <div class="elite-load-more-wrap">
+      <button class="elite-load-more" data-section="eliteAwards">
+        Load More
+      </button>
+    </div>
+  </section>
+
+  <!-- 10. Popular This Month -->
+  <section class="elite-extra-section">
+    <div class="elite-section-header">
+      <div>
+        <span class="elite-section-kicker">POPULAR NOW</span>
+        <h2>Popular This Month</h2>
+      </div>
+    </div>
+    <div class="elite-extra-row" id="popularMonthRow"></div>
+    <div class="elite-load-more-wrap">
+      <button class="elite-load-more" data-section="popularMonth">
+        Load More
+      </button>
+    </div>
+  </section>
+
+</section>
+
+
+<!-- =========================================
+     MAIN MOVIE GRID
+========================================= -->
+
+<section
+    class="movies-section"
+    id="movies"
+>
+
+
+    <div class="section-heading">
+
+        <div>
+
+            <p class="eyebrow">
+                YOUR NEXT FAVORITE
+            </p>
+
+            <h2 id="sectionTitle">
+                Popular Movies
+            </h2>
+
+        </div>
+
+
+        <span
+            class="results-count"
+            id="resultsCount"
+        ></span>
+
+    </div>
+
+
+
+    <!-- Existing genre filters -->
+
+    <div
+        class="filters"
+        id="filters"
+    >
+
+        <button
+            class="filter-btn active"
+            data-genre="All"
+        >
+            All Movies
+        </button>
+
+
+        <button
+            class="filter-btn"
+            data-genre="Action"
+        >
+            Action
+        </button>
+
+
+        <button
+            class="filter-btn"
+            data-genre="Sci-Fi"
+        >
+            Sci-Fi
+        </button>
+
+
+        <button
+            class="filter-btn"
+            data-genre="Drama"
+        >
+            Drama
+        </button>
+
+
+        <button
+            class="filter-btn"
+            data-genre="Adventure"
+        >
+            Adventure
+        </button>
+
+
+        <button
+            class="filter-btn"
+            data-genre="Thriller"
+        >
+            Thriller
+        </button>
+
+    </div>
+
+
+
+    <div
+        class="movie-grid"
+        id="movieGrid"
+    ></div>
+
+
+
+    <!-- Infinite scroll loader -->
+
+    <div
+        id="loadMoreSentinel"
+        class="load-more-sentinel"
+    >
+
+        <div
+            id="infiniteLoader"
+            class="infinite-loader"
+        >
+
+            <span class="loader-spinner"></span>
+
+            <span>
+                Loading more movies...
+            </span>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- Keep this because current JS uses it -->
+
+    <div
+        class="load-more-wrap"
+    >
+
+        <button
+            class="secondary-btn"
+            id="loadMoreBtn"
+        >
+            Load More
+        </button>
+
+    </div>
+
+
+
+    <div
+        class="empty-state"
+        id="emptyState"
+        hidden
+    >
+
+        <div class="empty-icon">
+            🎬
+        </div>
+
+        <h3>
+            No movies found
+        </h3>
+
+        <p>
+            Try another title or select a different genre.
+        </p>
+
+        <button
+            class="secondary-btn"
+            id="resetBtn"
+        >
+            Show all movies
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     EXPLORE GENRES
+========================================= -->
+
+<section class="genre-explore">
+
+    <div class="section-heading">
+
+        <div>
+
+            <p class="eyebrow">
+                EXPLORE
+            </p>
+
+            <h2>
+                Browse by Genre
+            </h2>
+
+        </div>
+
+    </div>
+
+
+    <div class="genre-grid">
+
+        <button data-genre="Action">
+            <span>💥</span>
+            Action
+        </button>
+
+        <button data-genre="Adventure">
+            <span>🌎</span>
+            Adventure
+        </button>
+
+        <button data-genre="Comedy">
+            <span>😂</span>
+            Comedy
+        </button>
+
+        <button data-genre="Crime">
+            <span>🔎</span>
+            Crime
+        </button>
+
+        <button data-genre="Drama">
+            <span>🎭</span>
+            Drama
+        </button>
+
+        <button data-genre="Horror">
+            <span>👻</span>
+            Horror
+        </button>
+
+        <button data-genre="Romance">
+            <span>❤️</span>
+            Romance
+        </button>
+
+        <button data-genre="Sci-Fi">
+            <span>🚀</span>
+            Sci-Fi
+        </button>
+
+        <button data-genre="Thriller">
+            <span>🔪</span>
+            Thriller
+        </button>
+
+    </div>
+
+    
+
+</section>
+
+<!-- =========================================
+     FUNCTIONAL INFO CARDS
+========================================= -->
+
+<section class="elite-info">
+
+    <!-- Discover Movies -->
+    <button
+        class="elite-info-card"
+        type="button"
+        data-action="discover"
+    >
+        <span class="info-icon">🎬</span>
+
+        <div class="info-card-content">
+            <h3>Discover Movies</h3>
+
+            <p>
+                Browse thousands of movie titles and
+                discover something new every time.
+            </p>
+
+            <span class="info-card-action">
+                Explore Movies <span>→</span>
+            </span>
+        </div>
+    </button>
+
+
+    <!-- Save Favorites -->
+    <button
+        class="elite-info-card"
+        type="button"
+        data-action="favorites"
+    >
+        <span class="info-icon">❤️</span>
+
+        <div class="info-card-content">
+            <h3>Save Favorites</h3>
+
+            <p>
+                Keep your favorite movies together
+                and find them whenever you want.
+            </p>
+
+            <span class="info-card-action">
+                My Favorites <span>→</span>
+            </span>
+        </div>
+    </button>
+
+
+    <!-- Keep Exploring -->
+    <button
+        class="elite-info-card"
+        type="button"
+        data-action="explore"
+    >
+        <span class="info-icon">⚡</span>
+
+        <div class="info-card-content">
+            <h3>Keep Exploring</h3>
+
+            <p>
+                Infinite scrolling keeps your movie
+                discovery going.
+            </p>
+
+            <span class="info-card-action">
+                Load More <span>→</span>
+            </span>
+        </div>
+    </button>
+
+</section>
+
+
+</main>
+
+</div>
+
+
+
+<!-- =========================================
+     FOOTER
+========================================= -->
+
+<footer>
+
+    <div>
+
+<a href="#" class="elite-brand" id="homeLogo">
+    <span class="brand-icon">▶</span>
+    <span>Elite<span class="brand-accent">Play</span></span>
+</a>
+
+       <p>
+        Crafted with <span>♥</span> by
+        <strong>EliteTeam</strong>
+        <div><small>© 2026 ElitePlay. All rights reserved.</small></div>
+    </p>
+
+    </div>
+
+
+
+    <div class="footer-links">
+
+    <button
+        type="button"
+        class="footer-action"
+        data-footer-action="popular"
+    >
+        Popular
+    </button>
+
+    <button
+        type="button"
+        class="footer-action"
+        data-footer-action="trending"
+    >
+        Trending
+    </button>
+
+    <button
+        type="button"
+        class="footer-action"
+        data-footer-action="top-rated"
+    >
+        Top Rated
+    </button>
+
+    <button
+        type="button"
+        class="footer-action"
+        data-footer-action="genres"
+    >
+        Genres
+    </button>
+
+</div>
+
+</footer>
+
+
+
+<!-- =========================================
+     MOVIE DETAILS MODAL
+========================================= -->
+
+<div
+    class="modal"
+    id="movieModal"
+    aria-hidden="true"
+>
+
+    <div
+        class="modal-backdrop"
+        id="modalBackdrop"
+    ></div>
+
+
+    <div class="modal-content">
+
+        <button
+            class="modal-close"
+            id="modalClose"
+            aria-label="Close"
+        >
+            ✕
+        </button>
+
+
+        <img
+            id="modalPoster"
+            src=""
+            alt="Movie poster"
+        >
+
+
+        <div class="modal-info">
+
+            <span class="eyebrow">
+                MOVIE DETAILS
+            </span>
+
+
+            <h2 id="modalTitle"></h2>
+
+
+            <div
+                class="hero-meta"
+                id="modalMeta"
+            ></div>
+
+
+            <p id="modalDescription"></p>
+
+
+            <div class="modal-actions">
+
+                <button
+                    class="primary-btn"
+                    id="playMovieBtn"
+                >
+                    ▶ Play Movie
+                </button>
+
+
+                <button
+                    class="primary-btn"
+                    id="modalTrailer"
+                >
+                    ▶ Watch Trailer
+                </button>
+
+
+                <button
+                    class="secondary-btn"
+                    id="modalFavorite"
+                >
+                    ♡ Add to Favorites
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================
+     VIDEO PLAYER
+========================================= -->
+
+<div
+    class="video-modal"
+    id="videoModal"
+    aria-hidden="true"
+>
+
+    <div
+        class="video-backdrop"
+        id="videoBackdrop"
+    ></div>
+
+
+    <div class="video-player-shell">
+
+        <div class="video-player-header">
+
+            <div>
+
+                <span class="eyebrow">
+                    NOW PLAYING
+                </span>
+
+                <h3 id="playerTitle">
+                    Movie
+                </h3>
+
+            </div>
+
+
+            <button
+                class="video-close"
+                id="videoClose"
+            >
+                ✕
+            </button>
+
+        </div>
+
+
+        <video
+            id="moviePlayer"
+            controls
+            playsinline
+            preload="metadata"
+        ></video>
+
+
+        <div class="video-player-footer">
+
+            <span id="playerStatus">
+                Ready to play
+            </span>
+
+
+            <button
+                class="secondary-btn"
+                id="chooseVideoBtn"
+            >
+                Choose MP4
+            </button>
+
+
+            <input
+                id="videoFileInput"
+                type="file"
+                accept="video/mp4,video/webm,video/ogg"
+                hidden
+            >
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- Section for popup -->
+
+<!-- =========================================
+     ELITEPLAY LOGIN DEVELOPMENT POPUP
+========================================= -->
+
+<div
+    class="elite-login-modal"
+    id="loginModal"
+    aria-hidden="true"
+>
+
+    <div
+        class="elite-login-backdrop"
+        id="loginBackdrop"
+    ></div>
+
+
+    <div
+        class="elite-login-popup"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="loginPopupTitle"
+    >
+
+        <!-- Close Button -->
+        <button
+            class="elite-login-close"
+            id="loginClose"
+            type="button"
+            aria-label="Close"
+        >
+            ✕
+        </button>
+
+
+        <!-- Icon -->
+        <div class="elite-login-icon">
+            🔐
+        </div>
+
+
+        <!-- Content -->
+        <div class="elite-login-content">
+
+            <span class="elite-login-kicker">
+                ELITEPLAY
+            </span>
+
+            <h2 id="loginPopupTitle">
+                Login is Coming Soon
+            </h2>
+
+            <p>
+                We're currently working on the ElitePlay
+                login experience. This feature is under
+                development and will be available soon.
+            </p>
+
+            <p class="elite-login-subtext">
+                Until then, sit back, explore the cinema,
+                and enjoy discovering your next favorite movie.
+            </p>
+
+        </div>
+
+
+        <!-- Back Button -->
+        <button
+            class="elite-back-cinema-btn"
+            id="backToCinema"
+            type="button"
+        >
+            🎬 Back to Cinema
+        </button>
+
+    </div>
+
+</div>
+
+
+
+
+<script src="ThemeOrLangSections/loginbtn.js"></script>
+
+<script src="config.js"></script>
+
+
+<!-- Supabase -->
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+
+<!-- Your existing JS -->
+
+<script src="moviebox.js"></script>
+
+<script src="newSections.js"></script>
+
+<!-- <script src="ThemeOrLangSections/themeLang.css"></script> -->
+<script src="ThemeOrLangSections/themeLang.js"></script>
+
+
+
+</body>
+
+</html>
